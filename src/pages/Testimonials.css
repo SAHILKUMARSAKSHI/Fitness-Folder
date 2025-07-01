@@ -1,0 +1,97 @@
+.testimonial-slider-marquee {
+  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  padding: 6rem 0 2rem 0; /* Account for fixed navbar (4rem) + extra spacing */
+  display: block;
+}
+
+.testimonial-slider-track {
+  display: flex;
+  gap: 2rem;
+  animation: testimonial-marquee 32s linear infinite;
+  will-change: transform;
+  margin: 0;
+}
+
+@keyframes testimonial-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.testimonial-card {
+  min-width: 320px;
+  max-width: 340px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.08rem;
+  opacity: 0.98;
+  position: relative;
+}
+
+.testimonial-card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+  border: 2px solid rgba(99, 102, 241, 0.2);
+}
+
+.testimonial-card .testimonial-name {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-card .testimonial-designation {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.testimonial-card .testimonial-quote {
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .testimonial-card {
+    min-width: 85vw;
+    max-width: 90vw;
+    font-size: 0.98em;
+    padding: 1.5rem 1rem 1.2rem 1rem;
+  }
+  
+  .testimonial-card .testimonial-quote {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .testimonial-slider-track {
+    gap: 1rem;
+  }
+}
