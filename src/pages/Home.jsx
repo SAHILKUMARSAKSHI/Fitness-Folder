@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { SignedIn, SignedOut, SignInButton, SignUpButton } from '../context/ClerkNavAuth';
+import { SignedIn, SignedOut } from '../context/ClerkNavAuth';
 import { FiArrowRight, FiPlay, FiStar, FiUser, FiActivity } from 'react-icons/fi';
 import Testimonials from './Testimonials';
 import './Home.css';
@@ -65,26 +65,16 @@ const Home = () => {
           <div className="cta-container">
             <SignedOut>
               <div className="auth-buttons">
-                <SignInButton mode="modal">
+                <Link to="/login">
                   <motion.button 
                     className="cta-primary"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <FiPlay className="button-icon" />
-                    Start Your Journey
+                    Login to Continue
                   </motion.button>
-                </SignInButton>
-                <SignUpButton mode="modal">
-                  <motion.button 
-                    className="cta-secondary"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Create Account
-                    <FiArrowRight className="button-icon" />
-                  </motion.button>
-                </SignUpButton>
+                </Link>
               </div>
               <div className="features-preview">
                 <div className="feature-item">

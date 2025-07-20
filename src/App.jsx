@@ -90,6 +90,22 @@ const AppContent = () => {
                 )
               } 
             />
+            <Route 
+              path="/login" 
+              element={
+                // Redirect logged-in users to workouts page
+                isSignedIn ? <Navigate to="/workouts" replace /> : (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Auth />
+                  </motion.div>
+                )
+              } 
+            />
               
               <Route 
                 path="/plans" 
